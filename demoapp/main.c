@@ -1153,7 +1153,8 @@ int WaitDeviceArrival(int mode, unsigned char* msgToSend, unsigned int len)
     eDevType DevTypeBck = eDevType_NONE;
     unsigned char MifareAuthCmd[] = {0x60U, 0x00 /*block*/, 0x02, 0x02, 0x02, 0x02, 0x00 /*key*/, 0x00 /*key*/, 0x00 /*key*/, 0x00 /*key*/ , 0x00 /*key*/, 0x00 /*key*/};
     unsigned char MifareAuthResp[255];
-    unsigned char MifareReadCmd[] = {0x30U,  /*block*/ 0x00};
+ //   unsigned char MifareReadCmd[] = {0x30U,  /*block*/ 0x00};
+    unsigned char MifareReadCmd[] = {0xA2U,  /*block*/ 0x04, 0xFF, 0xFF, 0xFF, 0xFF};
     unsigned char MifareWriteCmd[] = {0xA2U,  /*block*/ 0x04, 0xFF, 0xFF, 0xFF, 0xFF};
     unsigned char MifareResp[255];
     
